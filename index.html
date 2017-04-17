@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>黑白棋</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <h2 class="title">黑白棋</h2>
+    <div class="box">
+        <div class="score-box">
+            <div class="chess-color">
+                <p>当前回合</p>
+                <div class="color">
+                    <div id="current-color" class="chess">
+                        <div class="chess_black"></div>
+                        <div class="chess_white"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="black-score"><span></span><span class="black">2</span></div>
+            <div class="white-score"><span></span><span class="white">2</span></div>
+        </div>
+        <div id="chessboard"></div>
+        <div class="rule">
+            <div>
+                <h3>游戏规则：</h3>
+                <p>* 当您的棋子在某一水平、垂直和斜线方向包围了对手的棋子时，就可以翻转这些棋子的颜色，使它们成为您方颜色。</p>
+                <p>* 只能走包围并翻转对手棋子的位置。每一回合都必须至少翻转一颗对手的棋子。</p>
+                <p>* 按规则不能再走棋时，这一回合弃权。计算机会自动将控制权交给对方。</p>
+                <p>* 在棋盘还没有下满时，如果一方的棋子已经被对方吃光，则棋局也结束。将对手棋子吃光的一方获胜。下满时，棋子数多的一方获胜。</p>
+            </div>
+            <button class="restart" type="button">重新开始</button>
+        </div>
+    </div>
+
+    <div class="start-game">
+        <div class="start-box">
+            <div class="btn-box">
+                <h2>开始游戏</h2>
+                <button class="man" type="button">两人对战</button>
+                <button class="ai" type="button">人机对战</button>
+            </div>
+        </div>
+    </div>
+    <div class="result-box">
+        <div class="result">
+            <h4>游戏结果</h4>
+            <div class="black-score"><span></span><span class="black">2</span></div>
+            <div class="white-score"><span></span><span class="white">2</span></div>
+            <p><span class="result-color"></span>, 胜！</p>
+            <button class="restart" type="button">重新开始</button>
+            <button class="cancel" type="button">取消</button>
+        </div>
+    </div>
+
+
+    <!-- script -->
+    <script src="tool.js" type="text/javascript"></script>
+    <script src="chess.js" type="text/javascript"></script>
+    <script src="AI.js" type="text/javascript"></script>
+</body>
+
+</html>
