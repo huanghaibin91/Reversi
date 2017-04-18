@@ -41,7 +41,11 @@ function ai() {
         var chess_arr = scoreCount(simulate_chess, upper_hand).chess_arr;
         if (chess_arr.length == 0) {
             upper_hand = !upper_hand;
-            alert('黑子回合跳过');
+            // alert('黑子回合跳过');
+            blackPass.style.display = 'block';
+            setTimeout(function () {
+                blackPass.style.display = 'none';
+            }, 1000);
             setTimeout(ai, 1000);
         }
     }

@@ -24,6 +24,8 @@ var resultBox = document.getElementsByClassName('result-box')[0];
 var resultColor = document.getElementsByClassName('result-color')[0]
 var restart = document.getElementsByClassName('restart');
 var cancel = document.getElementsByClassName('cancel')[0];
+var blackPass = document.querySelector('.black-pass');
+var whitePass = document.querySelector('.white-pass');
 // 选择游戏模式
 btnBox.addEventListener('click', function (e) {
     var startBox = document.getElementsByClassName('start-game')[0];
@@ -87,10 +89,18 @@ chessboard.addEventListener('click', function (e) {
             if (chess_arr.length == 0) {
                 if (upper_hand) {
                     upper_hand = !upper_hand;
-                    alert('黑子回合跳过');
+                    // alert('黑子回合跳过');
+                    blackPass.style.display = 'block';
+                    setTimeout(function () {
+                        blackPass.style.display = 'none';
+                    }, 1000);
                 } else {
                     upper_hand = !upper_hand;
-                    alert('白子回合跳过');
+                    // alert('白子回合跳过');
+                    whitePass.style.display = 'block';
+                    setTimeout(function () {
+                        whitePass.style.display = 'none';
+                    }, 1000);
                 } 
             } else {
                 if (ai_flag) {

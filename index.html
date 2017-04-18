@@ -13,7 +13,7 @@
     <div class="box">
         <div class="score-box">
             <div class="chess-color">
-                <p>当前回合</p>
+                <p>当前</p>
                 <div class="color">
                     <div id="current-color" class="chess">
                         <div class="chess_black"></div>
@@ -24,7 +24,10 @@
             <div class="black-score"><span></span><span class="black">2</span></div>
             <div class="white-score"><span></span><span class="white">2</span></div>
         </div>
-        <div id="chessboard"></div>
+        <div id="chessboard">
+            <p class="black-pass">黑子跳过</p>
+            <p class="white-pass">白子跳过</p>
+        </div>
         <div class="rule">
             <div>
                 <h3>游戏规则：</h3>
@@ -48,12 +51,14 @@
     </div>
     <div class="result-box">
         <div class="result">
-            <h4>游戏结果</h4>
-            <div class="black-score"><span></span><span class="black">2</span></div>
-            <div class="white-score"><span></span><span class="white">2</span></div>
-            <p><span class="result-color"></span>, 胜！</p>
-            <button class="restart" type="button">重新开始</button>
-            <button class="cancel" type="button">取消</button>
+            <div class="result-screen">
+                <h4>游戏结果</h4>
+                <div class="black-score"><span></span><span class="black">2</span></div>
+                <div class="white-score"><span></span><span class="white">2</span></div>
+                <p><span class="result-color"></span>, 胜！</p>
+                <button class="restart" type="button">重新开始</button>
+                <button class="cancel" type="button">取消</button>
+            </div>
         </div>
     </div>
 

@@ -23,6 +23,22 @@ button {
     background: #ccc;
     border-top: 3px solid #888888;
     border-left: 3px solid #888888;
+    position: relative;
+}
+#chessboard>p {
+    width: 60px;
+    height: 30px;
+    padding: 5px;
+    position: absolute;
+    top: 175px;
+    left: 160px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 30px;
+    background-color: #46b7b9;
+    color: white;
+    z-index: 9;
+    display: none;
 }
 #chessboard>div {
     width: 47px;
@@ -40,8 +56,10 @@ button {
 }
 .chess {
     position: relative;
+    -webkit-transition: 0.8s;
     transition: 0.8s;
-    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
     top: 2px;
     left: 2px;
 }
@@ -49,18 +67,21 @@ button {
     position: absolute;
     top: 0;
     left: 0;
-    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
 }
 .chess_black {
     z-index: 2;
     background: black;
 }
 .chess_white {
-    transform: rotateY(-180deg);
+    -webkit-transform: rotateY(-180deg);
+            transform: rotateY(-180deg);
     background: white;
 }
 .chess.change {
-    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
 }
 /* 界面 */
 h2 {
@@ -85,7 +106,7 @@ h2 {
 #current-color {
     display: inline-block;
 }
- .result>button, .btn-box>button, .restart {
+ .result-screen>button, .btn-box>button, .restart {
     display: block;
     margin: 10px auto;
     width: 100px;
@@ -142,7 +163,7 @@ h2 {
     text-indent: 1.5em;
 }
 
-.start-game {
+.start-game, .result-box {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -153,13 +174,20 @@ h2 {
     background: #ddeedf;
     z-index: 9;
 }
-.start-box {
-    width: 200px;
+.start-box, .result {
     height: 100%;
     margin: auto;
     border-left: 1px solid black;
     border-right: 1px solid black;
     position: relative;
+}
+.start-box {
+    width: 200px;
+}
+.result {
+    width: 400px;
+    text-align: center;
+    border: none;
 }
 .btn-box {
     width: 200px;
@@ -169,39 +197,31 @@ h2 {
     top: 100px;
 }
 .result-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #ddeedf;
-    z-index: 10;
     display: none;
 }
-.result {
+.result-screen {
     text-align: center;
     width: 400px;
-    position: absolute;
-    top: 170px;
-    left: 500px;
+    height: 300px;
+    margin-top: 30%;
     border-left: 1px solid black;
     border-right: 1px solid black;
 }
-.result>h4 {
+.result-screen>h4 {
     margin: 20px;
 }
-.result>div {
+.result-screen>div {
     display: inline-block;
     text-align: center;
     width: 100px;
     padding: 10px 0;
 }
-.result>p {
+.result-screen>p {
     padding: 10px;
     font-size: 18px;
     font-weight: bold;
 }
-.result p span {
+.result-screen p span {
     color: red;
 }
 .cancel:hover, .restart:hover, .man:hover, .ai:hover {
