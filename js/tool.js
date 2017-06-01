@@ -8,7 +8,7 @@ var addClass = function (ele, cls) {
 		ele.className += ' ' + cls;
 	}
 }
-// 移出类名
+// 移除类名
 var removeClass = function (ele, cls) {
 	if (hasClass(ele, cls)) {
 		ele.className = ele.className.replace(new RegExp('(\\s|^)' + cls + '(\\s|$)'), '');

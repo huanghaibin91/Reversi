@@ -1,9 +1,11 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 16px "Microsoft YaHei" sans-serif;
 }
 body {
-    background-color: #ddeedf;
+    background: url('../image/background.jpg') no-repeat;
+    background-size: cover;  
     overflow-x: hidden;
     overflow-y: hidden;
 }
@@ -21,8 +23,8 @@ button {
     width: 400px;
     height: 400px;
     background: #ccc;
-    border-top: 3px solid #888888;
-    border-left: 3px solid #888888;
+    border-top: 3px solid #ea5455;
+    border-left: 3px solid #ea5455;
     position: relative;
 }
 #chessboard>p {
@@ -35,7 +37,7 @@ button {
     font-size: 14px;
     text-align: center;
     line-height: 30px;
-    background-color: #46b7b9;
+    background-color: #2d4059;
     color: white;
     z-index: 9;
     display: none;
@@ -44,9 +46,13 @@ button {
     width: 47px;
     height: 47px;
     float: left;
-    border-right: 3px solid #909090;
-    border-bottom: 3px solid #909090;
+    border-right: 3px solid #ea5455;
+    border-bottom: 3px solid #ea5455;
     cursor: pointer;
+    background: #ffd460;
+}
+#chessboard>div.active {
+    background: #f07b3f;
 }
 /* 棋子 */
 .chess, .chess_black, .chess_white {
@@ -88,6 +94,9 @@ h2 {
     text-align: center;
     margin: 30px 0;
 }
+h2, h3, h4 {
+    color: #333;
+}
 .box {
     width: 706px;
     height: 406px;
@@ -102,18 +111,24 @@ h2 {
 }
 .chess-color>p {
     margin: 15px auto;
+    text-indent: -10px;
+    font: bold 16px "Microsoft YaHei";
 }
 #current-color {
     display: inline-block;
 }
  .result-screen>button, .btn-box>button, .restart {
     display: block;
-    margin: 10px auto;
+    margin: 20px auto;
     width: 100px;
     height: 40px;
-    border-radius: 40px;
-    background-color: #a0a0a0;
+    background-color: #2d4059;
+    font-size: 18px;
+    color: white;
     cursor: pointer;  
+}
+.restart {
+    margin: 10px auto;
 }
 .score-box .white-score {
     position: relative;
@@ -125,7 +140,6 @@ h2 {
 }
 .black-score span:nth-child(1) {
     background-color: black;
-    
 }
 .white-score span:nth-child(1) {
     background-color: white;
@@ -150,7 +164,7 @@ h2 {
     line-height: 42px;
     font-size: 24px;
     font-weight: bold;
-    color: #388186;
+    color: #333;
     overflow: hidden;
 }
 .rule {
@@ -161,6 +175,7 @@ h2 {
     font-size: 12px;
     padding: 5px;
     text-indent: 1.5em;
+    color: #333;
 }
 
 .start-game, .result-box {
@@ -173,13 +188,17 @@ h2 {
     right: 0;
     background: #ddeedf;
     z-index: 9;
+    background: url('../image/cover.jpg') no-repeat;
+    background-size: cover;
 }
 .start-box, .result {
     height: 100%;
     margin: auto;
     border-left: 1px solid black;
     border-right: 1px solid black;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .start-box {
     width: 200px;
@@ -192,9 +211,6 @@ h2 {
 .btn-box {
     width: 200px;
     height: 300px;
-    margin-top: 50%;
-    position: absolute;
-    top: 100px;
 }
 .result-box {
     display: none;
@@ -203,7 +219,6 @@ h2 {
     text-align: center;
     width: 400px;
     height: 300px;
-    margin-top: 30%;
     border-left: 1px solid black;
     border-right: 1px solid black;
 }
@@ -225,7 +240,7 @@ h2 {
     color: red;
 }
 .cancel:hover, .restart:hover, .man:hover, .ai:hover {
-    font-weight: bold;
     color: white;
-    background-color: #46b7b9;
+    background-color: #f07b3f;
+    border: 2px solid #ea5455;
 }

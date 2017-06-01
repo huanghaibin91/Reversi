@@ -110,7 +110,7 @@ chessboard.addEventListener('click', function (e) {
         }
     }
 }, false);
-// 画棋盘
+// 绘制棋盘
 var drawChessboard = function () {
     var chessboard = document.getElementById('chessboard');
     for (var i = 0; i < 8; i++) {
@@ -118,6 +118,15 @@ var drawChessboard = function () {
             var chessboard_part = document.createElement('div');
             chessboard_part.id = '' + i + j;
             chessboard_part.className = 'chessboard-part';
+            if (i % 2 == 0) {
+                if (j % 2 !== 0) {
+                    chessboard_part.className = 'chessboard-part active';
+                }
+            } else {
+                if (j % 2 == 0) {
+                    chessboard_part.className = 'chessboard-part active';                    
+                }
+            }
             chessboard.appendChild(chessboard_part);
         }
     }
@@ -127,6 +136,7 @@ var drawChessboard = function () {
     drawChess(document.getElementById('43'));
     drawChess(document.getElementById('44'));
 }
+
 // 画棋子
 var drawChess = function (target) {
     var chess = document.createElement('div');
