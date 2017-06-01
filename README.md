@@ -17,3 +17,5 @@
 ![](https://github.com/huanghaibin91/Reversi/blob/master/image/image2.png?raw=true)
 
 ![](https://github.com/huanghaibin91/Reversi/blob/master/image/image3.png?raw=true)
+
+![](./image/image.png)
