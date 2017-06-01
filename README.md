@@ -12,7 +12,7 @@
 
 ## 项目图片 ##
 
-![](./image/image1.png)
+![](https://github.com/huanghaibin91/Reversi/blob/master/image/image.png?raw=true)
 
 
 
