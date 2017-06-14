@@ -82,7 +82,10 @@ chessboard.addEventListener('click', function (e) {
         }
         var empty = chessArr().empty;
         if (empty == 0) {
-            resultBox.style.display = 'block';
+            // resultBox.style.display = 'block';
+            setTimeout(function () {
+                resultBox.style.display = 'block';
+            }, 2000);
         } else {
             // 落子之后检查下一轮是否有落子处，如没有下一回合跳过
             var chess_arr = scoreCount(simulate_chess, upper_hand).chess_arr;

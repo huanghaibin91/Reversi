@@ -188,8 +188,7 @@ h2, h3, h4 {
     right: 0;
     background: #ddeedf;
     z-index: 9;
-    background-color: #eaffd0;
-    background: url('../image/cover.jpg') no-repeat;
+    background: #eaffd0 url('../image/cover.jpg') no-repeat;
     background-size: cover;
 }
 .start-box, .result {
