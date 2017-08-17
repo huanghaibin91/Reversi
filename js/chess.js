@@ -12,6 +12,7 @@ var simulate_chess = chessArr().chess_arr;
 // 页面加载完毕后绘制棋盘
 window.onload = function () {
     drawChessboard();
+    document.querySelector('.loading-box').style.display = 'none';
 }
 // 游戏按钮
 var chessboard = document.getElementById('chessboard');

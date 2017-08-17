@@ -19,6 +19,44 @@ button {
     display: none;
 }
 /* 棋盘 */
+.loading-box {
+    position: absolute;
+    z-index: 99;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background: #0d7377;
+}
+
+.loading {
+    position: relative;
+    width: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading img {
+    animation: loading 2s linear infinite;
+}
+
+.loading p {
+    text-align: center;
+    margin: 10px;
+    font-weight: bold;
+}
+
 #chessboard {
     width: 400px;
     height: 400px;
