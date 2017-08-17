@@ -34,21 +34,36 @@ button {
     width: 200px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
     text-align: center;
+}
+
+@-webkit-keyframes loading {
+    from {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
 }
 
 @keyframes loading {
     from {
-        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
     }
     to {
-        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
     }
 }
 
 .loading img {
-    animation: loading 2s linear infinite;
+    -webkit-animation: loading 2s linear infinite;
+            animation: loading 2s linear infinite;
 }
 
 .loading p {
@@ -234,9 +249,15 @@ h2, h3, h4 {
     margin: auto;
     border-left: 1px solid black;
     border-right: 1px solid black;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 .start-box {
     width: 200px;
