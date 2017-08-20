@@ -3,22 +3,29 @@
     padding: 0;
     font-family: 16px "Microsoft YaHei" sans-serif;
 }
+
 body {
     background: url('../image/background.jpg') no-repeat;
-    background-size: cover;  
+    background-size: cover;
     overflow-x: hidden;
     overflow-y: hidden;
 }
+
 button {
     border: none;
 }
+
 .show {
     display: block;
 }
+
 .hide {
     display: none;
 }
+
+
 /* 棋盘 */
+
 .loading-box {
     position: absolute;
     z-index: 99;
@@ -35,35 +42,35 @@ button {
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     text-align: center;
 }
 
 @-webkit-keyframes loading {
     from {
         -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     to {
         -webkit-transform: rotate(360deg);
-                transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 }
 
 @keyframes loading {
     from {
         -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     to {
         -webkit-transform: rotate(360deg);
-                transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 }
 
 .loading img {
     -webkit-animation: loading 2s linear infinite;
-            animation: loading 2s linear infinite;
+    animation: loading 2s linear infinite;
 }
 
 .loading p {
@@ -80,6 +87,7 @@ button {
     border-left: 3px solid #ea5455;
     position: relative;
 }
+
 #chessboard>p {
     width: 60px;
     height: 30px;
@@ -95,6 +103,7 @@ button {
     z-index: 9;
     display: none;
 }
+
 #chessboard>div {
     width: 47px;
     height: 47px;
@@ -104,73 +113,100 @@ button {
     cursor: pointer;
     background: #ffd460;
 }
+
 #chessboard>div.active {
     background: #f07b3f;
 }
+
+
 /* 棋子 */
-.chess, .chess_black, .chess_white {
+
+.chess,
+.chess_black,
+.chess_white {
     width: 42px;
     height: 42px;
     border-radius: 50%;
 }
+
 .chess {
     position: relative;
     -webkit-transition: 0.8s;
     transition: 0.8s;
     -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
+    transform-style: preserve-3d;
     top: 2px;
     left: 2px;
 }
-.chess_black, .chess_white {
+
+.chess_black,
+.chess_white {
     position: absolute;
     top: 0;
     left: 0;
     -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
+    backface-visibility: hidden;
 }
+
 .chess_black {
     z-index: 2;
     background: black;
 }
+
 .chess_white {
     -webkit-transform: rotateY(-180deg);
-            transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
     background: white;
 }
+
 .chess.change {
     -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
+
+
 /* 界面 */
+
 h2 {
     text-align: center;
     margin: 30px 0;
 }
-h2, h3, h4 {
+
+h2,
+h3,
+h4 {
     color: #333;
 }
+
 .box {
     width: 706px;
     height: 406px;
     margin: 50px auto;
 }
+
 .box>div {
     float: left;
 }
-.score-box, .rule {
+
+.score-box,
+.rule {
     width: 150px;
     height: 403px;
 }
+
 .chess-color>p {
     margin: 15px auto;
     text-indent: -10px;
     font: bold 16px "Microsoft YaHei";
 }
+
 #current-color {
     display: inline-block;
 }
- .result-screen>button, .btn-box>button, .restart {
+
+.result-screen>button,
+.btn-box>button,
+.restart {
     display: block;
     margin: 20px auto;
     width: 100px;
@@ -178,36 +214,46 @@ h2, h3, h4 {
     background-color: #2d4059;
     font-size: 18px;
     color: white;
-    cursor: pointer;  
+    cursor: pointer;
 }
+
 .restart {
     margin: 10px auto;
 }
+
 .score-box .white-score {
     position: relative;
     top: 203px;
 }
+
 .score-box .black-score {
     position: relative;
     top: 183px;
 }
+
 .black-score span:nth-child(1) {
     background-color: black;
 }
+
 .white-score span:nth-child(1) {
     background-color: white;
 }
-.black-score span:nth-child(1), .white-score span:nth-child(1) {
+
+.black-score span:nth-child(1),
+.white-score span:nth-child(1) {
     display: inline-block;
     width: 42px;
     height: 42px;
     border-radius: 50%;
     margin: 4px 0 0 10px;
 }
+
 .color {
     margin-left: 0;
 }
-.white-score span:nth-child(2), .black-score span:nth-child(2) {
+
+.white-score span:nth-child(2),
+.black-score span:nth-child(2) {
     display: inline-block;
     width: 42px;
     height: 42px;
@@ -220,10 +266,12 @@ h2, h3, h4 {
     color: #333;
     overflow: hidden;
 }
+
 .rule {
     position: relative;
     overflow: hidden;
 }
+
 .rule div {
     font-size: 12px;
     padding: 5px;
@@ -231,7 +279,8 @@ h2, h3, h4 {
     color: #333;
 }
 
-.start-game, .result-box {
+.start-game,
+.result-box {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -244,7 +293,9 @@ h2, h3, h4 {
     background: #eaffd0 url('../image/cover.jpg') no-repeat;
     background-size: cover;
 }
-.start-box, .result {
+
+.start-box,
+.result {
     height: 100%;
     margin: auto;
     border-left: 1px solid black;
@@ -253,27 +304,32 @@ h2, h3, h4 {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
+
 .start-box {
     width: 200px;
 }
+
 .result {
     width: 400px;
     text-align: center;
     border: none;
 }
+
 .btn-box {
     width: 200px;
     height: 300px;
 }
+
 .result-box {
     display: none;
 }
+
 .result-screen {
     text-align: center;
     width: 400px;
@@ -281,24 +337,32 @@ h2, h3, h4 {
     border-left: 1px solid black;
     border-right: 1px solid black;
 }
+
 .result-screen>h4 {
     margin: 20px;
 }
+
 .result-screen>div {
     display: inline-block;
     text-align: center;
     width: 100px;
     padding: 10px 0;
 }
+
 .result-screen>p {
     padding: 10px;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold;
 }
+
 .result-screen p span {
-    color: red;
+    color: #FF0000;
 }
-.cancel:hover, .restart:hover, .man:hover, .ai:hover {
+
+.cancel:hover,
+.restart:hover,
+.man:hover,
+.ai:hover {
     color: white;
     background-color: #f07b3f;
     border: 2px solid #ea5455;
