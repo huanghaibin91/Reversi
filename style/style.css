@@ -181,7 +181,7 @@ h4 {
 .box {
     width: 706px;
     height: 406px;
-    margin: 50px auto;
+    margin: 120px auto;
 }
 
 .box>div {
@@ -263,7 +263,7 @@ h4 {
     line-height: 42px;
     font-size: 24px;
     font-weight: bold;
-    color: #333;
+    color: #ea5455;
     overflow: hidden;
 }
 
