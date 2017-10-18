@@ -1,0 +1,137 @@
+body {
+    background: url('../image/background2.jpg') no-repeat center;
+    background-size: cover;
+}
+/* 加载页 */
+.loading-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+}
+.loading {
+    width: 100%;
+    height: 100%;
+}
+.door {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.door>div {
+    width: 50%;
+    transition: all 1s;
+}
+.loading-icon {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #337ab7;
+}
+@keyframes loading {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.loading-icon-box i {
+    animation: loading linear 2s infinite;
+    font-size: 20px;
+    font-weight: bold;
+}
+.door-left.open {
+    transform: translateX(-100%);
+}
+.door-right.open {
+    transform: translateX(100%);
+}
+/* 游戏选项 */
+.game-menu button {
+    margin: 1em;
+}
+/* 棋盘 */
+.navbar.navbar-default {
+    border: none;
+    background-color: rgba(173, 202, 96, 0.5);
+    margin-bottom: 0;
+}
+#chess-board {
+    width: 100%;
+    height: 100%;
+    background: #ccc;
+    border-top: 3px solid #ea5455;
+    border-left: 3px solid #ea5455;
+    position: relative;
+    overflow: hidden;
+}
+
+#chess-board>div {
+    width: 12.5%;
+    float: left;
+    border-right: 3px solid #ea5455;
+    border-bottom: 3px solid #ea5455;
+    cursor: pointer;
+    background: #ffd460;
+}
+
+#chess-board>div.active {
+    background: #f07b3f;
+}
+.color {
+    width: 20px;
+    height: 20px;
+}
+.color .chess {
+    width: 100%;
+    height: 100%;
+}
+#chess-board h3 {
+    position: absolute;
+    margin-top: 0px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    display: none;
+}
+/* 棋子 */
+.chess,
+.chess-black,
+.chess-white {
+    width: calc(100% - 3px);
+    height: calc(100% - 3px);
+    border-radius: 50%;
+}
+.chess {
+    position: relative;
+    -webkit-transition: 0.8s;
+    transition: 0.8s;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    top: 2px;
+    left: 2px;
+}
+.chess-black,
+.chess-white {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.chess-black {
+    z-index: 2;
+    background: black;
+}
+.chess-white {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    background: white;
+}
+.chess.change {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
