@@ -31,17 +31,17 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-                <div class="navbar navbar-default">
-                    <div class="navbar-header">
-                        <a class="navbar-brand player-name" href="#" style="color: black;"></a>
+                <div class="nav">
+                    <div>
+                        <a class="player-name h3" href="#"></a>
                     </div>
-                    <div class="color navbar-text navbar-right" style="margin-right: 15px;">
+                    <div class="color">
+                        <p>当前回合</p>
                         <div id="current-color" class="chess">
                             <div class="chess-black"></div>
                             <div class="chess-white"></div>
                         </div>
                     </div>
-                    <p class="navbar-text navbar-right" style="color: black;">当前回合</p>
                 </div>
                 <div id="chess-board">
                     <h3 class="black-pass">
@@ -51,17 +51,15 @@
                         <span class="label label-primary">白子跳过</span>
                     </h3>
                 </div>
-                <div class="navbar navbar-default">
-                    <div class="navbar-left" style="margin-left: 15px;">
-                        <button type="button" class="btn btn-primary  navbar-btn">
-                            黑子得分
-                            <span class="badge black">2</span>
-                        </button>
-                        <button type="button" class="btn btn-primary  navbar-btn">
-                            白子得分
-                            <span class="badge white">2</span>
-                        </button>
-                    </div>
+                <div class="nav">
+                    <button type="button" class="btn btn-primary  navbar-btn">
+                        黑子得分
+                        <span class="badge black">2</span>
+                    </button>
+                    <button type="button" class="btn btn-primary  navbar-btn">
+                        白子得分
+                        <span class="badge white">2</span>
+                    </button>
                     <button type="button" class="btn btn-primary navbar-btn navbar-right restart" style="margin-right: 15px;margin-left: 15px;">
                         重开一局
                     </button>
@@ -137,7 +135,7 @@
                                 昵称
                             </span>
                             <span class="pull-right player-name">
-                                
+
                             </span>
                         </li>
                         <li class="list-group-item clearfix">

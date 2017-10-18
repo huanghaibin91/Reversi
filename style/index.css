@@ -53,10 +53,21 @@ body {
     margin: 1em;
 }
 /* 棋盘 */
-.navbar.navbar-default {
-    border: none;
+.nav {
+    width: 100%;
+    height: 50px;
     background-color: rgba(173, 202, 96, 0.5);
-    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.color {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+.color>p {
+    margin-bottom: 0px;
 }
 #chess-board {
     width: 100%;
@@ -81,12 +92,12 @@ body {
     background: #f07b3f;
 }
 .color {
-    width: 20px;
+    width: 100px;
     height: 20px;
 }
 .color .chess {
-    width: 100%;
-    height: 100%;
+    width: 20px;
+    height: 20px;
 }
 #chess-board h3 {
     position: absolute;
