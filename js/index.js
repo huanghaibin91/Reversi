@@ -14,7 +14,7 @@ $(document).ready(function () {
     // 绘制棋盘
     drawChessboard();
     // 检查本地储存是否有玩家
-    if (JSON.parse(localStorage.getItem('player')).name) {
+    if (localStorage.getItem('player')) {
         $('.game-menu').modal({
             show: true,
             backdrop: 'static'
