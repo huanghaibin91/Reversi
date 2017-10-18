@@ -40,6 +40,7 @@ $(document).ready(function () {
             show: true,
             backdrop: 'static'
         });
+        getPlayerMessage();
     });
     // 游戏目录
     $('.game-menu .modal-body').on('click touch', function (event) {
