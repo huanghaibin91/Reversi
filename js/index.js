@@ -42,6 +42,13 @@ $(document).ready(function () {
         });
         getPlayerMessage();
     });
+    // 关闭添加新玩家
+    $('.close-add-player, .close-player-message').on('click touch', function () {
+        $('.game-menu').modal({
+            show: true,
+            backdrop: 'static'
+        });
+    });
     // 游戏目录
     $('.game-menu .modal-body').on('click touch', function (event) {
         var $target = $(event.target);
