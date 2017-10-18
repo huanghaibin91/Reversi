@@ -13,13 +13,13 @@ var simulate_chess = chessArr().chess_arr;
 $(document).ready(function () {
     // 绘制棋盘
     drawChessboard();
-    getPlayerMessage();
     // 检查本地储存是否有玩家
     if (JSON.parse(localStorage.getItem('player')).name) {
         $('.game-menu').modal({
             show: true,
             backdrop: 'static'
         });
+        getPlayerMessage();
     } else {
         $('.add-player').modal({
             show: true,
