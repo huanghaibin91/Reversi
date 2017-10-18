@@ -13,6 +13,11 @@ var simulate_chess = chessArr().chess_arr;
 $(document).ready(function () {
     // 绘制棋盘
     drawChessboard();
+    $('.loading-icon').css('display', 'none');
+    $('.door-left, .door-right').addClass('open');
+    $('.door-left').on('transitionend', function () {
+        $('.loading-box').css('display', 'none');
+    });
     // 检查本地储存是否有玩家
     if (localStorage.getItem('player')) {
         $('.game-menu').modal({
@@ -183,17 +188,6 @@ function updatePlayerMessage (black, white) {
         player.max = JSON.parse(localStorage.getItem('player')).max;
     }
     localStorage.setItem('player', JSON.stringify(player));
-}
-// 页面加载完毕后绘制棋盘
-window.onload = function () {
-    $('.loading-icon').css('display', 'none');
-    $('.door-left, .door-right').addClass('open');
-    $('.door-left').on('transitionend', function () {
-        $('.loading-box').css('display', 'none');
-    });
-    $('body').on('resize', function () {
-        $(chessboard_part).css('height', $(chessboard).width() / 8 + 'px');
-    });
 }
 // 绘制棋盘
 function drawChessboard() {
