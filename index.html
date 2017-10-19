@@ -33,7 +33,8 @@
             <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
                 <div class="nav">
                     <div>
-                        <a class="player-name h3" href="#"></a>
+                        <span class="glyphicon glyphicon-user"> </span>
+                        <span class="player-name h4" href="#"></span>
                     </div>
                     <div class="color">
                         <p>当前回合</p>
@@ -109,7 +110,10 @@
                     <h4 class="modal-title">添加新玩家</h4>
                 </div>
                 <div class="modal-body">
-                    <input type="text" class="form-control player-input" placeholder="请输入玩家名称">
+                    <div class="form-group">
+                        <input type="text" class="form-control player-input" placeholder="请输入玩家名称">
+                        <span class="help-block" style="display: none;">昵称不能为空</span>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default close-add-player" data-dismiss="modal">关闭</button>

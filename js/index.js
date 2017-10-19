@@ -10,9 +10,8 @@ var over = true;
 // 初始棋盘模拟数组
 var simulate_chess = chessArr().chess_arr;
 
-$(document).ready(function () {
-    // 绘制棋盘
-    drawChessboard();
+window.onload = function () {
+    // 隐藏加载页
     $('.loading-icon').css('display', 'none');
     $('.door-left, .door-right').addClass('open');
     $('.door-left').on('transitionend', function () {
@@ -31,21 +30,36 @@ $(document).ready(function () {
             backdrop: 'static'
         });
     }
+}
+
+$(document).ready(function () {
+    // 绘制棋盘
+    drawChessboard();
+    // 根据屏幕变化改变棋盘尺寸
+    $(window).resize(function () {
+        var width = $('.chessboard-part').width();
+        $('.chessboard-part').css('height', width + 'px');
+    });
     // 添加新玩家
     $('.save-player').on('click touch', function () {
         localStorage.removeItem('player');
         var player = {};
-        player.name = $('.player-input').val();
-        player.number = 0;
-        player.win = 0;
-        player.max = 0;
-        localStorage.setItem('player', JSON.stringify(player));
-        $('.add-player').modal('hide');
-        $('.game-menu').modal({
-            show: true,
-            backdrop: 'static'
-        });
-        getPlayerMessage();
+        if ($('.player-input').val()) {
+            player.name = $('.player-input').val();
+            player.number = 0;
+            player.win = 0;
+            player.max = 0;
+            localStorage.setItem('player', JSON.stringify(player));
+            $('.add-player').modal('hide');
+            $('.game-menu').modal({
+                show: true,
+                backdrop: 'static'
+            });
+            getPlayerMessage();
+        } else {
+            $('.form-group').addClass('has-error');
+            $('.help-block').css('display', 'block');
+        }
     });
     // 关闭添加新玩家
     $('.close-add-player, .close-player-message').on('click touch', function () {
@@ -75,11 +89,6 @@ $(document).ready(function () {
         }
     });
     // 玩家信息
-    $('a.player-name').on('click touch', function () {
-        $('.player-message').modal({
-            show: true
-        });
-    });
     $('.player-message').on('hidden.bs.modal', function () {
         $('.game-menu').modal({
             show: true,
@@ -166,14 +175,14 @@ $(document).ready(function () {
     });
 });
 // 获取玩家信息
-function getPlayerMessage () {
+function getPlayerMessage() {
     $('.player-name').text(JSON.parse(localStorage.getItem('player')).name);
     $('.player-number').text(JSON.parse(localStorage.getItem('player')).number);
     $('.player-win').text(JSON.parse(localStorage.getItem('player')).win);
     $('.player-max').text(JSON.parse(localStorage.getItem('player')).max);
 }
 // 更新玩家信息
-function updatePlayerMessage (black, white) {
+function updatePlayerMessage(black, white) {
     var player = {};
     player.name = JSON.parse(localStorage.getItem('player')).name;
     player.number = JSON.parse(localStorage.getItem('player')).number + 1;
@@ -777,14 +786,14 @@ function score() {
 }
 // 深度复制多维数组
 function deepCopy(obj) {
-	var out = [];
-	var len = obj.length;
-	for (var i = 0; i < len; i++) {
-		if (obj[i] instanceof Array) {
-			out[i] = deepCopy(obj[i]);
-		} else {
-			out[i] = obj[i];
-		}
-	}
-	return out;
+    var out = [];
+    var len = obj.length;
+    for (var i = 0; i < len; i++) {
+        if (obj[i] instanceof Array) {
+            out[i] = deepCopy(obj[i]);
+        } else {
+            out[i] = obj[i];
+        }
+    }
+    return out;
 }

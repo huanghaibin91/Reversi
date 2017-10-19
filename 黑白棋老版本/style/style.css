@@ -80,8 +80,8 @@ button {
 }
 
 #chessboard {
-    width: 395px;
-    height: 395px;
+    width: 392px;
+    height: 392px;
     background: #ccc;
     border-top: 3px solid #ea5455;
     border-left: 3px solid #ea5455;
@@ -105,8 +105,8 @@ button {
 }
 
 #chessboard>div {
-    width: 49px;
-    height: 49px;
+    width: 46px;
+    height: 46px;
     float: left;
     border-right: 3px solid #ea5455;
     border-bottom: 3px solid #ea5455;
