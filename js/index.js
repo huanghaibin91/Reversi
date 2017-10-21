@@ -76,7 +76,7 @@ $(document).ready(function () {
             ai_flag = true;
             $('.player-name').text(JSON.parse(localStorage.getItem('player')).name);
         } else if ($target.hasClass('man')) {
-            $('.player-name').text('黑白棋');
+            $('.player-name').text(JSON.parse(localStorage.getItem('player')).name);
         } else if ($target.hasClass('player')) {
             $('.player-message').modal({
                 show: true
