@@ -1,6 +1,6 @@
 # Reversi
 
-原生JS写的黑白棋小游戏
+JS + Bootstrap 写的黑白棋小游戏
 
 ## 项目描述 ##
 

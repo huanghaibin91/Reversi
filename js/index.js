@@ -41,7 +41,7 @@ $(document).ready(function () {
         $('.chessboard-part').css('height', width + 'px');
     });
     // 添加新玩家
-    $('.save-player').on('click touch', function () {
+    $('.save-player').on('click touchend', function () {
         localStorage.removeItem('player');
         var player = {};
         if ($('.player-input').val()) {
@@ -62,14 +62,14 @@ $(document).ready(function () {
         }
     });
     // 关闭添加新玩家
-    $('.close-add-player, .close-player-message').on('click touch', function () {
+    $('.close-add-player, .close-player-message').on('click touchend', function () {
         $('.game-menu').modal({
             show: true,
             backdrop: 'static'
         });
     });
     // 游戏目录
-    $('.game-menu .modal-body').on('click touch', function (event) {
+    $('.game-menu .modal-body').on('click touchend', function (event) {
         var $target = $(event.target);
         $('.game-menu').modal('hide');
         if ($target.hasClass('ai')) {
@@ -96,15 +96,15 @@ $(document).ready(function () {
         });
     })
     // 重开一局
-    $('.restart').on('click touch', function () {
+    $('.restart').on('click touchend', function () {
         window.location.reload();
     });
     // 取消
-    $('.cancel').on('click touch', function () {
+    $('.cancel').on('click touchend', function () {
         $('.game-result').modal('hide');
     });
     // 玩家点击落子
-    $('#chess-board').on('click touch', function (e) {
+    $('#chess-board').on('click touchend', function (e) {
         var target = e.target;
         var target_row = parseInt(target.id.charAt(0)); // 落子处行
         var target_column = parseInt(target.id.charAt(1)); // 落子处列
